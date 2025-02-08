@@ -31,6 +31,7 @@ function Subasta() {
     return (
         <div className="p-4 max-w-md mx-auto bg-white shadow-md rounded-lg">
             <h1 className="text-xl font-bold text-center">Subasta Privada</h1>
+            <img src="src\Img\AireAcondicionado.jpg"></img>
             <input
                 type="text"
                 placeholder="Tu nombre completo"
