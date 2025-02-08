@@ -33,7 +33,7 @@ function Subasta() {
             <h1 className="text-xl font-bold text-center">Subasta Privada</h1>
             <input
                 type="text"
-                placeholder="Tu nombre"
+                placeholder="Tu nombre completo"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 className="border p-2 w-full mt-2"
