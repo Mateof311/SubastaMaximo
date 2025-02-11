@@ -1,64 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { database } from "./FirebaseConfig";
-import { ref, push, onValue } from "firebase/database";
+import React from "react";
+import ObjetoSubasta from "./ObjetoSubasta";
+import "./Subasta.css";
 import AireAcondicionado from "../src/Img/AireAcondicionado.jpg";
+import BatidoraPeabody from "../src/Img/BatidoraPeabody.jpg";
+import Heladera from "../src/Img/Heladera.jpg";
+import Proyector from "../src/Img/Proyector.jpg";
+import SillonNegro from "../src/Img/SillonNegro.jpg";
+import TvSamsung from "../src/Img/TvSamsung.jpg";
+import ImagenVacia from "../src/Img/ImagenVacia.jpg";
 
-
+const objetosSubasta = [
+    { id: "1", nombre: "Aire Acondicionado", imagen: AireAcondicionado, precioBase: 200 },
+    { id: "2", nombre: "Batidora Peabody", imagen: BatidoraPeabody, precioBase: 300 },
+    { id: "3", nombre: "Heladera", imagen: Heladera, precioBase: 400 },
+    { id: "4", nombre: "Proyector Gadnic", imagen: Proyector, precioBase: 500 },
+    { id: "5", nombre: "Sillon 3 cuerpos", imagen: SillonNegro, precioBase: 600 },
+    { id: "6", nombre: "Tv Samsung 50''", imagen: TvSamsung, precioBase: 700 },
+    { id: "7", nombre: "Colchon 1 plaza", imagen: ImagenVacia, precioBase: 800 },
+    { id: "8", nombre: "Sommier 2 plazas", imagen: ImagenVacia, precioBase: 900 },
+    { id: "9", nombre: "Moto ", imagen: ImagenVacia, precioBase: 1000 },
+    { id: "10", nombre: "Horno Electrico", imagen: ImagenVacia, precioBase: 1100 },
+];
 function Subasta() {
-    const [nombre, setNombre] = useState("");
-    const [oferta, setOferta] = useState("");
-    const [mejorOferta, setMejorOferta] = useState(null);
-
-    useEffect(() => {
-        const ofertasRef = ref(database, "ofertas");
-        onValue(ofertasRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                const ofertasArray = Object.values(data);
-                const mejor = ofertasArray.reduce((max, oferta) =>
-                    oferta.oferta > max.oferta ? oferta : max, { oferta: 0 });
-                setMejorOferta(mejor);
-            }
-        });
-    }, []);
-
-    const manejarOferta = () => {
-        if (nombre && oferta) {
-            push(ref(database, "ofertas"), { nombre, oferta: parseInt(oferta) });
-            setNombre("");
-            setOferta("");
-        }
-    };
-
     return (
-        <div className="p-4 max-w-md mx-auto bg-white shadow-md rounded-lg">
-            <h1 className="text-xl font-bold text-center">Subasta Privada</h1>
-            <img src={AireAcondicionado} alt="Aire Acondicionado" />;
-            <input
-                type="text"
-                placeholder="Tu nombre completo"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
-                className="border p-2 w-full mt-2"
-            />
-            <input
-                type="number"
-                placeholder="Tu oferta en $"
-                value={oferta}
-                onChange={(e) => setOferta(e.target.value)}
-                className="border p-2 w-full mt-2"
-            />
-            <button
-                onClick={manejarOferta}
-                className="bg-blue-500 text-white p-2 w-full mt-2 rounded"
-            >
-                Enviar Oferta
-            </button>
-            {mejorOferta && (
-                <div className="mt-4 p-2 bg-green-100 text-green-800 rounded">
-                    <strong>Mejor Oferta :</strong> {mejorOferta.nombre} - ${mejorOferta.oferta}
-                </div>
-            )}
+        <div className="container">
+            <h1 className="text-2xl font-bold text-center">Subasta Privada Maximo </h1>
+            <div className="subasta-grid">
+                {objetosSubasta.map((objeto) => (
+                    <ObjetoSubasta key={objeto.id} objeto={objeto} />
+                ))}
+            </div>
         </div>
     );
 }
