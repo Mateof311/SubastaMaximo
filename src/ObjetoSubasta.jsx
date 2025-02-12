@@ -3,6 +3,10 @@ import { database } from "./FirebaseConfig";
 import { ref, push, onValue } from "firebase/database";
 import "./Subasta.css";
 
+const formatPrice = (price) => {
+    return price.toLocaleString("es-ES");
+};
+
 function ObjetoSubasta({ objeto }) {
     const [nombre, setNombre] = useState("");
     const [oferta, setOferta] = useState("");
@@ -36,7 +40,7 @@ function ObjetoSubasta({ objeto }) {
         <div className="objeto-subasta">
             <h2 className="text-lg font-bold">{objeto.nombre}</h2>
             <img src={objeto.imagen} alt={objeto.nombre} className="objeto-img" />
-            <p >Precio base: ${objeto.precioBase}</p>
+            <p >Precio base: ${formatPrice(objeto.precioBase)}</p>
 
             <input
                 type="text"
@@ -61,7 +65,7 @@ function ObjetoSubasta({ objeto }) {
 
             {mejorOferta && (
                 <div className="mejor-oferta">
-                    <strong>Mejor Oferta :</strong> {mejorOferta.nombre} - ${mejorOferta.oferta}
+                    <strong>Mejor Oferta :</strong> {mejorOferta.nombre} - ${formatPrice(mejorOferta.oferta)}
                 </div>
             )}
         </div>
