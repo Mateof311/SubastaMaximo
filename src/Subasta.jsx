@@ -20,8 +20,8 @@ const objetosSubasta = [
     { id: "5", nombre: "Sillón Cuerina 3 Cuerpos", imagen: SillonNegro, precioBase: 99990 },
     { id: "6", nombre: "Colchon 1 Plaza Inducol", imagen: Colchon1Plaza, precioBase: 39990 },
     { id: "7", nombre: "Sommier Piero Modena Doble Pillow Top 140 x 190 cm", imagen: Somier, precioBase: 199990 },
-    { id: "8", nombre: "Zanella Styler 150", imagen: Moto, precioBase: 649990 },
-    { id: "9", nombre: "Horno Electrico Liliana Facilcook", imagen: Horno, precioBase: 59990 },
+    { id: "8", nombre: "Horno Electrico Liliana Facilcook", imagen: Horno, precioBase: 59990 },
+    //{ id: "8", nombre: "Zanella Styler 150", imagen: Moto, precioBase: 649990 },
 ];
 
 function Subasta() {
