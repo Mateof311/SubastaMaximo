@@ -14,11 +14,12 @@ import BatidoraPeabody from "../src/Img/BatidoraPeabody.jpg";
 import Moto from "../src/Img/Moto.jpg";
 
 const objetosSubasta = [
-    { id: "1", nombre: "Heladera No Frost Patrick 285Lt", imagen: Heladera, precioBase: 349990 },
-    { id: "2", nombre: "Proyector Gadnic Unique 2500 Lum", imagen: Proyector, precioBase: 69990 },
-    { id: "3", nombre: "Sillón Cuerina 3 Cuerpos", imagen: SillonNegro, precioBase: 99990 },
-    { id: "4", nombre: "Sommier Piero Modena Doble Pillow Top 140 x 190 cm", imagen: Somier, precioBase: 199990 },
-    { id: "5", nombre: "Horno Electrico Liliana Facilcook", imagen: Horno, precioBase: 59990 },
+    
+    { id: "1", nombre: "Proyector Gadnic Unique 2500 Lum", imagen: Proyector, precioBase: 69990 },
+    { id: "2", nombre: "Sillón Cuerina 3 Cuerpos", imagen: SillonNegro, precioBase: 99990 },
+    { id: "3", nombre: "Horno Electrico Liliana Facilcook", imagen: Horno, precioBase: 59990 },
+    //{ id: "4", nombre: "Sommier Piero Modena Doble Pillow Top 140 x 190 cm", imagen: Somier, precioBase: 199990 },
+    //{ id: "5", nombre: "Heladera No Frost Patrick 285Lt", imagen: Heladera, precioBase: 349990 },
     //{ id: "6", nombre: "TV Samsung 50'' UHD 4K + Soporte TV Brazo Tagwood", imagen: TvSamsung, precioBase: 399990 },
     //{ id: "7", nombre: "Colchon 1 Plaza Inducol", imagen: Colchon1Plaza, precioBase: 39990 },
     //{ id: "8", nombre: "Batidora Peabody Planetaria", imagen: BatidoraPeabody, precioBase: 149990 },

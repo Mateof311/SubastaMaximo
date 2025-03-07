@@ -44,7 +44,7 @@ function ObjetoSubasta({ objeto }) {
 
             <input
                 type="text"
-                placeholder="Tu nombre"
+                placeholder="Tu nombre completo"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 className="input-box"
