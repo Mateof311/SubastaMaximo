@@ -20,7 +20,7 @@ Cómo ejecutar (local)
 
 Estado
 - Demo desplegada en Vercel.
-- Estado: Proyecto de práctica terminado (mejorable: tests, validaciones, persistencia).
+- Estado: Proyecto de práctica terminado (mejorable: tests, validaciones, persistencia, login, register,etc).
 
 Qué aprendí / notas
 - Uso de Vite + React.
